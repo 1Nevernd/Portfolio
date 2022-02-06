@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>website</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <p>Loading...</p>
+    </div>
+
+    <div class="accueil">
+        <header>
+            <a href="#" class="Logo">Portfolio</a>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
+        <section>
+            <img src="./image/stars.png" id="stars">
+            <img src="./image/moon2.png" id="moon">
+            <img src="./image/mountains_behind.png" id="mountains_behind">
+            <h2 id="texte">Théo Roustan</h2>
+            <a href="#sec" id="btn">Scroll</a>
+            <img src="./image/junglefront.png" id="mountains_front">
+        </section>
+        <div class="sec" id="sec">
+            <h2>Bonjour !</h2>
+            <p>Je m'appelle Théo et je suis actuellement un élève de Terminale au campus scolaire de Coulommiers. J'ai actuellement 18 ans et je suis passionné 
+                par la programmation, l'informatique et les réseaux au point d'en vouloir faire mon métier dans les années qui suivent. En attendant je consacre 
+                une bonne partie de mon temps sur de nombreux projets que vous pourrez constater un peu plus bas. J'apprends et souhaite apprendre de nombreux langages
+                comme le C, le Javascript, le Python mais j'aime aussi beaucoup le développement web comme en témoigne le site sur lequel vous vous trouvez. Je sais aussi
+                maitriser quelques logiciels comme Inkscape ou Gimp sur lesquels je crée des logos qui me servent pour mes différents projets.
+            </p>
+            <h2 class="work" id="work">Mes Projets</h2>
+            
+        </div>
+        <div class="third" id="third">
+            <p class="copyright">&copy; 2020 2021 - Roustan Théo</p>
+    </div>
+
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon'); 
+        let mountains_behind = document.getElementById('mountains_behind');
+        let mountains_front = document.getElementById('mountains_front'); 
+        let texte = document.getElementById('texte');
+        let btn = document.getElementById('btn');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.55 + 'px';
+            moon.style.top = value * 1.00 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            texte.style.marginRight = value * 4 + 'px';
+            texte.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript">
+         $(document).ready(function(){
+            $(".accueil").hide();
+        })
+        $(document).ready(function(){
+            $(".container").fadeOut(3000, function(){
+                $('.accueil').fadeIn(1000)
+            });
+        })
+    </script>
+</body>
+</html>
