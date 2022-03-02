@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>website</title>
+    <link rel="stylesheet" type="text/css" href="cssDéveloppementWeb/stylesDéveloppementWeb.css">
+</head>
+<body>
+    <div class="accueil">
+        <header>
+            <a href="index.html" class="Logo">Portfolio</a>
+            <ul>
+                <li><a href="index.html" class="active">Retour</a></li>
+            </ul>
+        </header>
+        <section>
+            <img src="./image/stars.png" id="stars">
+            <img src="./image/moon2.png" id="moon">
+            <img src="./image/mountains_behind.png" id="mountains_behind">
+            <h2 id="texte">Théo Roustan</h2>
+            <a href="#projets" id="btn">Projets</a>
+            <img src="./image/junglefront.png" id="junglefront">
+        </section>
+        <div class="MesProjets" id="projets">
+            <h2 class="work" id="work">Mes Projets</h2>
+            <div class="about-container">
+                <img src="./image/TrouveTonDevoir.png">
+                <div class="about-text">
+                    <h3>TrouveTonDevoir</h3>
+                    <p>TrouveTonDevoir est un de mes projets. Le but de ce site web est de référencer un maximum de devoirs, 
+                        sujets de bac, exercices ainsi que leurs corrections pour pouvoir s'entrainer et vérifier ses réponses.
+                        En cas de problème, l'utilisateur devrait pouvoir poser ses questions dans la partie forum du site.
+                    </p>
+                    <a class="button" href="https://github.com/1Nevernd/TrouveTonDevoir">Voir le code</a>
+                </div>
+            </div>
+            <div class="about-container">
+                <img src="./image/portfolio.png">
+                <div class="about-text">
+                    <h3>Mon Portfolio</h3>
+                    <p>Ce Portfolio est celui sur lequel vous vous trouvez. Il s'agit sans doute de mon plus gros projet en html/css
+                        avec plus de 700 lignes de code. Il m'a fallu plusieurs semaines pour le terminer, corriger les bugs et l'héberger.
+                    </p>
+                    <a class="button" href="https://github.com/1Nevernd/Portfolio">Voir le code</a>
+                </div>
+            </div>
+            <div class="about-container">
+                <img src="./image/1erPortfolio.png">
+                <div class="about-text">
+                    <h3>Mon 1er Portfolio</h3>
+                    <p>Ce Portfolio n'a jamais été terminé, il était mon premier projet en html/css c'est grâce à lui que j'ai
+                        découvert le développement web.
+                    </p>
+                    <a class="button" href="https://github.com/1Nevernd/1erPortfolio">Voir le code</a>
+                </div>
+            </div>
+            <div class="about-container">
+                <img src="./image/EMC.png">
+                <div class="about-text">
+                    <h3>Travail D'EMC</h3>
+                    <p>Au courant de l'année 2022 j'ai eu l'occasion de passer un oral d'EMC sur le thème de la lutte antiterrorisme,
+                        J'ai alors créé ce site web comme support pour mon oral.
+                    </p>
+                    <a class="button" href="https://github.com/1Nevernd/EMC">Voir le code</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon'); 
+        let mountains_behind = document.getElementById('mountains_behind');
+        let junglefront = document.getElementById('junglefront'); 
+        let texte = document.getElementById('texte');
+        let btn = document.getElementById('btn');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.55 + 'px';
+            moon.style.top = value * 1.00 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            junglefront.style.top = value * 0 + 'px';
+            texte.style.marginRight = value * 4 + 'px';
+            texte.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+
+</body>
+</html>

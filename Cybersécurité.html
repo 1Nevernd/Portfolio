@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>website</title>
+    <link rel="stylesheet" type="text/css" href="cssCybersécurité/stylesCybersécurité.css">
+</head>
+<body>
+    <div class="accueil">
+        <header>
+            <a href="index.html" class="Logo">Portfolio</a>
+            <ul>
+                <li><a href="index.html" class="active">Retour</a></li>
+            </ul>
+        </header>
+        <section>
+            <img src="./image/stars.png" id="stars">
+            <img src="./image/moon2.png" id="moon">
+            <img src="./image/mountains_behind.png" id="mountains_behind">
+            <h2 id="texte">Théo Roustan</h2>
+            <a href="#projets" id="btn">Challenge</a>
+            <img src="./image/junglefront.png" id="junglefront">
+        </section>
+        <div class="MesProjets" id="projets">
+            <h2 class="work" id="work">Challenge</h2>
+            <div class="about-container">
+                <img src="./image/rootme.png">
+                <div class="about-text">
+                    <h3>RootMe</h3>
+                    <p>J'ai réalisé certains challenges disponibles sur le site. Ces challenges
+                       mon permis d’appréhender les techniques intrusives retrouvées sur le web, allant de l’exploitation de 
+                       faille de configuration jusqu’aux injections de code.
+                    </p>
+                    <a class="button" href="https://www.root-me.org/fr/Challenges/">Voir le site</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon'); 
+        let mountains_behind = document.getElementById('mountains_behind');
+        let junglefront = document.getElementById('junglefront'); 
+        let texte = document.getElementById('texte');
+        let btn = document.getElementById('btn');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.55 + 'px';
+            moon.style.top = value * 1.00 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            junglefront.style.top = value * 0 + 'px';
+            texte.style.marginRight = value * 4 + 'px';
+            texte.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+
+</body>
+</html>

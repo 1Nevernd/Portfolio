@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>website</title>
+    <link rel="stylesheet" type="text/css" href="cssGraphisme/stylesGraphisme.css">
+</head>
+<body>
+    <div class="accueil">
+        <header>
+            <a href="index.html" class="Logo">Portfolio</a>
+            <ul>
+                <li><a href="index.html" class="active">Retour</a></li>
+            </ul>
+        </header>
+        <section>
+            <img src="./image/stars.png" id="stars">
+            <img src="./image/moon2.png" id="moon">
+            <img src="./image/mountains_behind.png" id="mountains_behind">
+            <h2 id="texte">Théo Roustan</h2>
+            <a href="#projets" id="btn">Projets</a>
+            <img src="./image/junglefront.png" id="junglefront">
+        </section>
+        <div class="MesProjets" id="projets">
+            <h2 class="work" id="work">Graphisme</h2>
+            <div class="about-container">
+                <img src="./image/app.jpg">
+                <div class="about-text">
+                    <h3>Des icônes</h3>
+                    <p>Parfois pendant la réalisation d'un projets je peux avoir besoins d'icône, pour la réalisation d'une application ou d'un site web par exemple.
+                        J'ai réalisé celui-ci pour la création d'un service de stockage de fichier en cloud. 
+                    </p>
+                    <a class="button" href="./image/app.jpg">Voir l'image</a>
+                </div>
+            </div>
+            <div class="about-container">
+                <img src="./image/logoTest2.png">
+                <div class="about-text">
+                    <h3>Mon logo</h3>
+                    <p>J'ai ce logo depuis mon premier Portfolio, je l'avais créé pour l'occasion et il me sert dans certains projets,
+                        il est même présent sur le site. La lettre "R" est le "R" de Roustan.
+                    </p>
+                    <a class="button" href="./image/logoTest2.png">Voir l'image</a>
+                </div>
+            </div>
+            <div class="about-container">
+                <img src="./image/Back.png">
+                <div class="about-text">
+                    <h3>Un fond d'écran</h3>
+                    <p>Cette image était le fond écran de mon 1er Portfolio. Comme pour toutes les autres cette image a été réalisé sur Gimp 
+                        et/ou Inkscape, Photoshop n'étant pas gratuit et disponible sur Linux.
+                    </p>
+                    <a class="button" href="./image/Back.png">Voir l'image</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon'); 
+        let mountains_behind = document.getElementById('mountains_behind');
+        let junglefront = document.getElementById('junglefront'); 
+        let texte = document.getElementById('texte');
+        let btn = document.getElementById('btn');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.55 + 'px';
+            moon.style.top = value * 1.00 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            junglefront.style.top = value * 0 + 'px';
+            texte.style.marginRight = value * 4 + 'px';
+            texte.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+
+</body>
+</html>
